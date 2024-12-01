@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meshal Alharbi | Robotics Engineer</title>
+    <style>
+        /* General Reset */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: #333;
+            color: #fff;
+            display: flex;
+            justify-content: space-between; /* Change to: flex-start, center, or flex-end to adjust position */
+            align-items: center;
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 90%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 1rem;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #007BFF;
+        }
+
+        /* Dropdown Button */
+        nav .menu-button {
+            display: none;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        nav .menu-button:hover {
+            background-color: #0056b3;
+        }
+
+        nav ul.mobile-menu {
+            display: none;
+            flex-direction: column;
+            background-color: #333;
+            position: absolute;
+            top: 100%;
+            right: 2rem;
+            width: 200px;
+            border-radius: 5px;
+        }
+
+        nav ul.mobile-menu li {
+            text-align: center;
+            margin: 0;
+        }
+
+        nav ul.mobile-menu li a {
+            display: block;
+            padding: 1rem;
+            color: #fff;
+            text-decoration: none;
+            border-bottom: 1px solid #444;
+        }
+
+        nav ul.mobile-menu li a:hover {
+            background-color: #007BFF;
+        }
+
+        /* Header Section */
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 6rem 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: left;
+            flex-wrap: wrap;
+        }
+
+        header .photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            justify-content: space-between;
+            overflow: hidden;
+            border: 4px solid #007BFF;
+            margin-right: 2rem;
+        }
+
+        header .photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        header .content {
+            max-width: 600px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin: 0.5rem 0 1rem;
+        }
+
+        header .btn {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            color: #fff;
+            background-color: #007BFF;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        header .btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+
+            nav .menu-button {
+                display: block;
+            }
+
+            nav ul.mobile-menu {
+                display: none;
+            }
+
+            nav ul.mobile-menu.active {
+                display: flex;
+            }
+
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            header .photo {
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+
+            header p {
+                font-size: 1rem;
+            }
+
+            header .btn {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header .photo {
+                width: 100px;
+                height: 100px;
+            }
+
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            header p {
+                font-size: 0.9rem;
+            }
+
+            header .btn {
+                padding: 0.3rem 0.6rem;
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">Meshal Alharbi</div>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#achievements">Achievements</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="menu-button" onclick="toggleMenu()">Menu</button>
+        <ul class="mobile-menu">
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#achievements">Achievements</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header Section -->
+    <header>
+        <div class="photo">
+            <img src="images/your-photo.jpg" alt="Meshal Alharbi">
+        </div>
+        <div class="content">
+            <h1>Meshal Alharbi</h1>
+            <p>Robotics Engineer | AI Specialist | Innovator</p>
+            <a href="assets/Meshal_Alharbi_CV.pdf" class="btn">Download CV</a>
+        </div>
+    </header>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('nav ul.mobile-menu');
+            menu.classList.toggle('active');
+        }
+    </script>
+    <!-- About Section -->
+    <section id="about" style="padding: 3rem 1rem; background-color: #f9f9f9; text-align: center;">
+        <div style="max-width: 800px; margin: auto;">
+            <h2 style="font-size: 2rem; margin-bottom: 1.5rem; color: #333;">About Me</h2>
+            <p style="font-size: 1.1rem; line-height: 1.8; color: #555;">
+                I am a robotics engineer and AI specialist with a passion for creating innovative solutions
+                that bridge technology and human interaction. With a postgraduate degree in AI and Machine Learning from
+                <strong>Purdue University</strong> and hands-on experience at <strong>NEOM</strong>, I have developed expertise in robotics,
+                immersive technologies, and AI integration. My mission is to use cutting-edge technology to solve real-world
+                challenges and create a smarter, more connected future.
+            </p>
+        </div>
+    </section>
+<!-- Experience Section -->
+<section id="experience" style="padding: 3rem 1rem; background-color: #fff;">
+    <div style="max-width: 800px; margin: auto;">
+        <h2 style="font-size: 2rem; margin-bottom: 1.5rem; text-align: center; color: #333;">Experience</h2>
+
+        <!-- Job 1: Robotics Engineer at NEOM -->
+        <div style="margin-bottom: 2rem;">
+            <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem; color: #007BFF;">Robotics Engineer | NEOM</h3>
+            <p style="font-size: 1rem; margin-bottom: 0.5rem; color: #555;"><strong>June 2022 – Present</strong></p>
+            <ul style="font-size: 1.1rem; line-height: 1.8; color: #555; padding-left: 1.5rem;">
+                <li>Collaborated with teams on multiple robotics projects, including humanoid robots from Engineered Arts and Ubtech.</li>
+                <li>Programmed and tested humanoid robots, integrating AI modules such as ChatGPT for enhanced conversational capabilities.</li>
+                <li>Developed immersive VR content for Versus VR glasses, focusing on training simulations and virtual presentations.</li>
+                <li>Engineered and deployed holographic avatars for interactive conversations and community engagement.</li>  
+            </ul>
+        </div>
+
+        <!-- Job 2: NEOM Robotics Program Trainee -->
+        <div style="margin-bottom: 2rem;">
+            <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem; color: #007BFF;">NEOM Robotics Program Trainee</h3>
+            <p style="font-size: 1rem; margin-bottom: 0.5rem; color: #555;"><strong>One Year</strong></p>
+            <ul style="font-size: 1.1rem; line-height: 1.8; color: #555; padding-left: 1.5rem;">
+                <li>Participated in the **World Robot Summit (WRS)**, achieving sixth place in Japan for robotics innovation.</li>
+                <li>Installed and modified safety systems for dual-arm **Universal Robots (UR)**.</li>
+                <li>Crafted and 3D-printed custom components for advanced robotic functionalities.</li>
+                <li>Developed SLAM visualizations for mapping and trajectory simulation in dynamic environments.</li>
+                <li>Performed 3D object scanning using LiDAR and trained YOLO for real-time object detection.</li>
+                <li>Designed and implemented industrial robotics systems using ROS and Python, achieving synchronized six degrees of freedom motion.</li>
+            </ul>
+        </div>
+
+        <!-- Learning Journey: Talent and Technology Creativity Unit -->
+        <div style="margin-bottom: 2rem;">
+            <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem; color: #007BFF;">Talent and Technology Creativity Unit</h3>
+            <p style="font-size: 1rem; margin-bottom: 0.5rem; color: #555;"><strong>Two Years (During University)</strong></p>
+            <p style="font-size: 1.1rem; color: #555; margin-bottom: 1rem;">
+                As a member of the **Talent and Technology Creativity Unit** during my university years, I engaged in advanced robotics and technology exploration. This experience fueled my passion for problem-solving and hands-on learning.
+            </p>
+            <ul style="font-size: 1.1rem; line-height: 1.8; color: #555; padding-left: 1.5rem;">
+                <li>Participated in hands-on workshops focused on robotics and emerging technologies.</li>
+                <li>Contributed to collaborative robotics projects, gaining experience in mission planning and system integration.</li>
+                <li>Developed foundational skills in programming, prototyping, and teamwork.</li>
+                <li>Engaged with peers and mentors to explore innovative approaches in robotics engineering.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- Projects Section -->
+<section id="projects" style="padding: 3rem 1rem; background-color: #f9f9f9;">
+    <div style="max-width: 800px; margin: auto;">
+        <h2 style="font-size: 2rem; margin-bottom: 1.5rem; text-align: center; color: #333;">Projects</h2>
+
+        <!-- Timeline Wrapper -->
+        <div style="border-left: 4px solid #007BFF; margin: 2rem 0; padding-left: 1rem;">
+
+            <!-- NEOM Robotics Program Trainee Projects -->
+            <h3 style="font-size: 1.8rem; margin-bottom: 1rem; color: #007BFF;">NEOM Robotics Program Trainee Projects <span style="font-size: 1rem; color: #555;">(Jun 2021 – May 2022)</span></h3>
+
+            <!-- Project 1: Safety System Installation -->
+            <div style="margin-bottom: 2rem;">
+                <h4 style="font-size: 1.5rem; margin-bottom: 0.5rem; color: #333;">Safety System Installation</h4>
+                <p style="font-size: 1.1rem; color: #555;">
+                    Installed and modified safety systems for dual-arm Universal Robots (UR) to ensure safe operation in complex industrial environments.
+                </p>
+                <ul style="font-size: 1.1rem; line-height: 1.8; color: #555; padding-left: 1.5rem;">
+                    <li>Enhanced robot safety mechanisms for workspace and user protection.</li>
+                </ul>
+                <!-- Photos Section -->
+                <div style="margin-top: 1rem;">
+                    <h5 style="font-size: 1.2rem; margin-bottom: 0.5rem; color: #007BFF;">Photos</h5>
+                    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                        <img src="images/safety-system1.jpg" alt="Safety System Installation 1" style="width: 150px; height: 100px; object-fit: cover; border-radius: 5px;">
+                        <img src="images/safety-system2.jpg" alt="Safety System Installation 2" style="width: 150px; height: 100px; object-fit: cover; border-radius: 5px;">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2: Component 3D Printing -->
+            <div style="margin-bottom: 2rem;">
+                <h4 style="font-size: 1.5rem; margin-bottom: 0.5rem; color: #333;">Component Design and 3D Printing</h4>
+                <p style="font-size: 1.1rem; color: #555;">
+                    Designed and 3D-printed custom components for robotic applications, ensuring improved functionality and performance.
+                </p>
+                <ul style="font-size: 1.1rem; line-height: 1.8; color: #555; padding-left: 1.5rem;">
+                    <li>Developed precise mechanical parts for dual-arm robots using advanced 3D modeling techniques.</li>
+                </ul>
+                <!-- Photos Section -->
+                <div style="margin-top: 1rem;">
+                    <h5 style="font-size: 1.2rem; margin-bottom: 0.5rem; color: #007BFF;">Photos</h5>
+                    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                        <img src="images/3d-printing1.jpg" alt="Component 3D Printing 1" style="width: 150px; height: 100px; object-fit: cover; border-radius: 5px;">
+                        <img src="images/3d-printing2.jpg" alt="Component 3D Printing 2" style="width: 150px; height: 100px; object-fit: cover; border-radius: 5px;">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3: SLAM Visualizations -->
+            <div style="margin-bottom: 2rem;">
+                <h4 style="font-size: 1.5rem; margin-bottom: 0.5rem; color: #333;">SLAM Visualizations</h4>
+                <p style="font-size: 1.1rem; color: #555;">
+                    Developed SLAM (Simultaneous Localization and Mapping) visualizations for mapping and trajectory simulation of robotic systems.
+                </p>
+                <ul style="font-size: 1.1rem; line-height: 1.8; color: #555; padding-left: 1.5rem;">
+                    <li>Created accurate 3D maps for workspace visualization and path optimization.</li>
+                </ul>
+                <!-- Photos Section -->
+                <div style="margin-top: 1rem;">
+                    <h5 style="font-size: 1.2rem; margin-bottom: 0.5rem; color: #007BFF;">Photos</h5>
+                    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                        <img src="images/slam1.jpg" alt="SLAM Visualization 1" style="width: 150px; height: 100px; object-fit: cover; border-radius: 5px;">
+                        <img src="images/slam2.jpg" alt="SLAM Visualization 2" style="width: 150px; height: 100px; object-fit: cover; border-radius: 5px;">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 4: YOLO Object Detection -->
+            <div style="margin-bottom: 2rem;">
+                <h4 style="font-size: 1.5rem; margin-bottom: 0.5rem; color: #333;">YOLO Object Detection Training</h4>
+                <p style="font-size: 1.1rem; color: #555;">
+                    Trained YOLO models for object detection to identify and track items in dynamic environments.
+                </p>
+                <ul style="font-size: 1.1rem; line-height: 1.8; color: #555; padding-left: 1.5rem;">
+                    <li>Used labeled datasets to train YOLO models for high-accuracy object detection.</li>
+                </ul>
+                <!-- Photos Section -->
+                <div style="margin-top: 1rem;">
+                    <h5 style="font-size: 1.2rem; margin-bottom: 0.5rem; color: #007BFF;">Photos</h5>
+                    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                        <img src="images/yolo1.jpg" alt="YOLO Object Detection 1" style="width: 150px; height: 100px; object-fit: cover; border-radius: 5px;">
+                        <img src="images/yolo2.jpg" alt="YOLO Object Detection 2" style="width: 150px; height: 100px; object-fit: cover; border-radius: 5px;">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 5: 3D Object Scanning -->
+            <div style="margin-bottom: 2rem;">
+                <h4 style="font-size: 1.5rem; margin-bottom: 0.5rem; color: #333;">3D Object Scanning with LiDAR</h4>
+                <p style="font-size: 1.1rem; color: #555;">
+                    Scanned and processed 3D objects using LiDAR for precise visualization and analysis in robotics applications.
+                </p>
+                <ul style="font-size: 1.1rem; line-height: 1.8; color: #555; padding-left: 1.5rem;">
+                    <li>Enhanced robotic accuracy with high-resolution 3D scanning.</li>
+                </ul>
+                <!-- Photos Section -->
+                <div style="margin-top: 1rem;">
+                    <h5 style="font-size: 1.2rem; margin-bottom: 0.5rem; color: #007BFF;">Photos</h5>
+                    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                        <img src="images/lidar1.jpg" alt="3D Scanning with LiDAR 1" style="width: 150px; height: 100px; object-fit: cover; border-radius: 5px;">
+                        <img src="images/lidar2.jpg" alt="3D Scanning with LiDAR 2" style="width: 150px; height: 100px; object-fit: cover; border-radius: 5px;">
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Project 1: Human-Like Robots -->
+            <div style="margin-bottom: 2rem;">
+                <h4 style="font-size: 1.5rem; margin-bottom: 0.5rem; color: #333;">Human-Like Robots <span style="font-size: 1rem; color: #555;">(Jan 2023 – Present)</span></h4>
+                <p style="font-size: 1.1rem; color: #555;">
+                    Programmed and tested humanoid robots (Engineered Arts and Ubtech), integrating ChatGPT for enhanced conversational capabilities.
+                </p>
+                <ul style="font-size: 1.1rem; line-height: 1.8; color: #555; padding-left: 1.5rem;">
+                    <li>Developed interactive conversational workflows using AI modules.</li>
+                    <li>Conducted real-world testing to optimize performance and reliability.</li>
+                </ul>
+            </div>
+
+            <!-- Project 2: Holographic Avatars -->
+            <div style="margin-bottom: 2rem;">
+                <h4 style="font-size: 1.5rem; margin-bottom: 0.5rem; color: #333;">Holographic Avatars <span style="font-size: 1rem; color: #555;">(Jul 2022 – Present)</span></h4>
+                <p style="font-size: 1.1rem; color: #555;">
+                    Designed and deployed holographic avatars for interactive conversations and community engagement.
+                </p>
+                <ul style="font-size: 1.1rem; line-height: 1.8; color: #555; padding-left: 1.5rem;">
+                    <li>Utilized holographic rendering technologies for lifelike visuals.</li>
+                    <li>Integrated AI systems to enable real-time conversational responses.</li>
+                </ul>
+            </div>
+
+            <!-- Project 3: Immersive VR Content -->
+            <div style="margin-bottom: 2rem;">
+                <h4 style="font-size: 1.5rem; margin-bottom: 0.5rem; color: #333;">Immersive VR Content <span style="font-size: 1rem; color: #555;">(Feb 2023 – Aug 2023)</span></h4>
+                <p style="font-size: 1.1rem; color: #555;">
+                    Developed VR content for Versus VR glasses, enhancing immersive training simulations and presentations.
+                </p>
+                <ul style="font-size: 1.1rem; line-height: 1.8; color: #555; padding-left: 1.5rem;">
+                    <li>Created realistic training simulations tailored for industrial use.</li>
+                    <li>Optimized VR interactions for seamless user experience.</li>
+                </ul>
+            </div>
+            <!-- NEOM School Robotics Lab -->
+            <div style="margin-bottom: 2rem;">
+                <h4 style="font-size: 1.5rem; margin-bottom: 0.5rem; color: #333;">NEOM School Robotics Lab Setup <span style="font-size: 1rem; color: #555;">(Apr 2022 – Jul 2022)</span></h4>
+                <p style="font-size: 1.1rem; color: #555;">
+                    Designed and implemented a state-of-the-art robotics lab for NEOM schools, integrating human-like robots, social robots, educational programmable robots, and virtual holographic systems to enhance learning and engagement.
+                </p>
+                <ul style="font-size: 1.1rem; line-height: 1.8; color: #555; padding-left: 1.5rem;">
+                    <li>Installed and programmed human-like robots for interactive teaching and engagement.</li>
+                    <li>Incorporated social robots to facilitate communication and teamwork in classroom activities.</li>
+                    <li>Developed educational content using programmable robots to teach STEM subjects.</li>
+                    <li>Integrated holographic systems for virtual teaching and immersive experiences.</li>
+                </ul>
+                <!-- Photos Section -->
+                <div style="margin-top: 1rem;">
+                    <h5 style="font-size: 1.2rem; margin-bottom: 0.5rem; color: #007BFF;">Photos</h5>
+                    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                        <img src="images/neom-lab1.jpg" alt="NEOM Robotics Lab 1" style="width: 150px; height: 100px; object-fit: cover; border-radius: 5px;">
+                        <img src="images/neom-lab2.jpg" alt="NEOM Robotics Lab 2" style="width: 150px; height: 100px; object-fit: cover; border-radius: 5px;">
+                        <img src="images/neom-lab3.jpg" alt="NEOM Robotics Lab 3" style="width: 150px; height: 100px; object-fit: cover; border-radius: 5px;">
+                    </div>
+                </div>
+            <!-- Project 4: Industrial Robot Systems -->
+            <div style="margin-bottom: 2rem;">
+                <h4 style="font-size: 1.5rem; margin-bottom: 0.5rem; color: #333;">Industrial Robot Systems <span style="font-size: 1rem; color: #555;">(Mar 2022 – Dec 2022)</span></h4>
+                <p style="font-size: 1.1rem; color: #555;">
+                    Engineered control systems for industrial robot arms, enabling synchronized six degrees of freedom motion using ROS and Python.
+                </p>
+                <ul style="font-size: 1.1rem; line-height: 1.8; color: #555; padding-left: 1.5rem;">
+                    <li>Designed and implemented motion control algorithms for complex tasks.</li>
+                    <li>Integrated SLAM for precise safety and workspace mapping.</li>
+                </ul>
+            </div>
+
+            <!-- Project 5: Thermal Camera Monitoring System -->
+            <div style="margin-bottom: 2rem;">
+                <h4 style="font-size: 1.5rem; margin-bottom: 0.5rem; color: #333;">Thermal Camera Monitoring System <span style="font-size: 1rem; color: #555;">(Jun 2023 – Present)</span></h4>
+                <p style="font-size: 1.1rem; color: #555;">
+                    Developed a real-time thermal camera monitoring system to detect and analyze rapid temperature changes, ensuring safety and preventing potential hazards.
+                </p>
+                <ul style="font-size: 1.1rem; line-height: 1.8; color: #555; padding-left: 1.5rem;">
+                    <li>Designed a grid-based analysis system for monitoring temperature variations within frames.</li>
+                    <li>Integrated YOLO for object detection, identifying high-temperature areas within thermal videos.</li>
+                </ul>
+            </div>
+
+            <!-- Personal Projects -->
+            <h3 style="font-size: 1.8rem; margin-bottom: 1rem; color: #007BFF;">Personal Projects</h3>
+
+            <!-- Smart Home Automation -->
+            <div style="margin-bottom: 2rem;">
+                <h4 style="font-size: 1.5rem; margin-bottom: 0.5rem; color: #333;">Smart Home Automation <span style="font-size: 1rem; color: #555;">(Sep 2021 – Present)</span></h4>
+                <p style="font-size: 1.1rem; color: #555;">
+                    Built a fully automated smart home system using Raspberry Pi, ESP32, and Home Assistant.
+                </p>
+                <ul style="font-size: 1.1rem; line-height: 1.8; color: #555; padding-left: 1.5rem;">
+                    <li>Integrated sensors for temperature, humidity, and motion monitoring.</li>
+                    <li>Programmed automated routines for controlling lights, curtains, and appliances.</li>
+                    <li>Integrated a smart dashboard to monitor, control, and automate smart home functions seamlessly.</li>
+                </ul>
+            </div>
+
+            <!-- 3D Printing and Design -->
+            <div style="margin-bottom: 2rem;">
+                <h4 style="font-size: 1.5rem; margin-bottom: 0.5rem; color: #333;">3D Printing and Design <span style="font-size: 1rem; color: #555;">(Jun 2020 – Present)</span></h4>
+                <p style="font-size: 1.1rem; color: #555;">
+                    Designed and printed various 3D models, including enclosures, racks, and utility boxes for personal and professional use.
+                </p>
+                <ul style="font-size: 1.1rem; line-height: 1.8; color: #555; padding-left: 1.5rem;">
+                    <li>Upgraded and calibrated a 3D printer for precision and efficiency.</li>
+                    <li>Created custom designs for sensor housings and server racks using Fusion 360.</li>
+                </ul>
+            </div>
+
+            <!-- Home Server Setup -->
+            <div style="margin-bottom: 2rem;">
+                <h4 style="font-size: 1.5rem; margin-bottom: 0.5rem; color: #333;">Home Server Setup and Networking <span style="font-size: 1rem; color: #555;">(Jan 2022 – Present)</span></h4>
+                <p style="font-size: 1.1rem; color: #555;">
+                    Built a robust home server and networking system for centralized data storage, automation scripts, and secure connectivity.
+                </p>
+                <ul style="font-size: 1.1rem; line-height: 1.8; color: #555; padding-left: 1.5rem;">
+                    <li>3D-printed a custom rack for professional organization and scalability.</li>
+                    <li>Configured automation scripts for smart home operations and media streaming.</li>
+                    <li>Integrated a secure and easy-connect router using Raspberry Pi for reliable networking.</li>
+                    <li>Added multiple security layers acting as a firewall to protect the network and connected devices.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Achievements Section -->
+<section id="achievements" style="padding: 3rem 1rem; background-color: #fff;">
+    <div style="max-width: 800px; margin: auto;">
+        <h2 style="font-size: 2rem; margin-bottom: 1.5rem; text-align: center; color: #333;">Achievements</h2>
+
+        <!-- Achievement 1 -->
+        <div style="margin-bottom: 2rem;">
+            <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem; color: #007BFF;">World Robot Summit (WRS) Finalist</h3>
+            <p style="font-size: 1.1rem; color: #555;">
+                Represented the Kingdom of Saudi Arabia at the World Robot Summit (WRS) in Japan, achieving <strong>6th place</strong> among global participants.
+            </p>
+        </div>
+
+        <!-- Achievement 2 -->
+        <div style="margin-bottom: 2rem;">
+            <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem; color: #007BFF;">Purdue University Postgraduate Degree</h3>
+            <p style="font-size: 1.1rem; color: #555;">
+                Completed a postgraduate degree in <strong>AI and Machine Learning</strong> at Purdue University, gaining expertise in advanced technologies and innovative problem-solving.
+            </p>
+        </div>
+
+        <!-- Achievement 3 -->
+        <div style="margin-bottom: 2rem;">
+            <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem; color: #007BFF;">NEOM Robotics Innovations</h3>
+            <p style="font-size: 1.1rem; color: #555;">
+                Successfully contributed to NEOM's cutting-edge robotics initiatives, including the development of humanoid robots, immersive VR content, and holographic avatars, recognized for their impact on smart city solutions.
+            </p>
+        </div>
+
+        <!-- Achievement 4 -->
+        <div style="margin-bottom: 2rem;">
+            <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem; color: #007BFF;">Smart Home Pioneer</h3>
+            <p style="font-size: 1.1rem; color: #555;">
+                Designed and implemented a fully automated smart home system, integrating sensors, dashboards, and secure networking, recognized by peers as a model of innovation.
+            </p>
+        </div>
+    </div>
+</section>
+</body>
+</html>

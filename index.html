@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Meshal Alharbi, Robotics Engineer specializing in AI, robotics, smart systems, and innovative technologies.">
+    <meta name="keywords" content="Meshal Alharbi, Robotics Engineer, AI, NEOM, Robotics Projects, Smart Home, Holograms, VR">
+    <meta name="author" content="Meshal Alharbi">
+    <title>Meshal Alharbi - Robotics Engineer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header id="home">
+        <nav>
+            <h1 class="logo">Meshal Alharbi</h1>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="burger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About</h2>
+        <p>
+            I am a Robotics Engineer with extensive experience in AI, robotics, smart home systems, and virtual holographic technologies. My passion is to innovate and develop systems that enhance everyday life and solve complex challenges.
+        </p>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="timeline">
+            <!-- Project 1 -->
+            <div class="timeline-item">
+                <h3>NEOM School Robotics Lab</h3>
+                <p>Designed and implemented a robotics lab for NEOM schools, integrating human-like robots, social robots, and holographic systems.</p>
+                <ul>
+                    <li>Installed and programmed human-like robots for interactive teaching.</li>
+                    <li>Integrated holographic systems for immersive learning experiences.</li>
+                </ul>
+            </div>
+            <!-- Project 2 -->
+            <div class="timeline-item">
+                <h3>Smart Home Automation</h3>
+                <p>Built a fully automated smart home system using Raspberry Pi, ESP32, and Home Assistant.</p>
+                <ul>
+                    <li>Integrated sensors for temperature, humidity, and motion monitoring.</li>
+                    <li>Developed a smart dashboard for real-time monitoring and control.</li>
+                </ul>
+            </div>
+            <!-- Project 3 -->
+            <div class="timeline-item">
+                <h3>Thermal Camera Monitoring System</h3>
+                <p>Developed a real-time thermal camera monitoring system to detect rapid temperature changes and prevent potential hazards.</p>
+                <ul>
+                    <li>Implemented YOLO for object detection to identify high-temperature areas.</li>
+                    <li>Designed grid-based analysis to monitor temperature variations.</li>
+                </ul>
+            </div>
+            <!-- Project 4 -->
+            <div class="timeline-item">
+                <h3>3D Printing and Design</h3>
+                <p>Designed and printed various 3D models, including enclosures, racks, and utility boxes for personal and professional use.</p>
+                <ul>
+                    <li>Upgraded and calibrated a 3D printer for precision and efficiency.</li>
+                    <li>Created custom designs for sensor housings and server racks using Fusion 360.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <h2>Experience</h2>
+        <div class="timeline">
+            <!-- Job 1 -->
+            <div class="timeline-item">
+                <h3>Talent and Technology Creativity Unit</h3>
+                <p>Collaborated on robotics and technology projects during my university years.</p>
+                <ul>
+                    <li>Explored innovative robotics applications and prototyping.</li>
+                    <li>Developed skills in programming, 3D printing, and data visualization.</li>
+                </ul>
+            </div>
+            <!-- Job 2 -->
+            <div class="timeline-item">
+                <h3>NEOM Robotics Program Trainee</h3>
+                <p>Contributed to groundbreaking robotics projects as part of the NEOM Robotics Program.</p>
+                <ul>
+                    <li>Installed safety systems for dual-arm robots and conducted testing.</li>
+                    <li>Developed SLAM visualizations for mapping and trajectory simulation.</li>
+                    <li>Trained YOLO models for object detection using labeled datasets.</li>
+                    <li>Scanned objects using LiDAR for precise 3D visualization.</li>
+                </ul>
+            </div>
+            <!-- Job 3 -->
+            <div class="timeline-item">
+                <h3>NEOM Robotics Engineer</h3>
+                <p>Currently working on advanced robotics, VR content, and holographic systems at NEOM.</p>
+                <ul>
+                    <li>Programmed and tested humanoid robots integrating AI modules.</li>
+                    <li>Created immersive VR content for Versus VR glasses.</li>
+                    <li>Developed holographic systems for community engagement and teaching.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements">
+        <h2>Achievements</h2>
+        <div class="achievement">
+            <h3>World Robot Summit</h3>
+            <p>Represented NEOM Robotics Program and achieved 6th place globally.</p>
+        </div>
+        <div class="achievement">
+            <h3>Purdue University</h3>
+            <p>Completed a postgraduate degree in AI and Machine Learning.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/meshalalharbi1991" target="_blank">linkedin.com/in/meshalalharbi1991</a></p>
+    </section>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop">↑</button>
+
+    <!-- Scripts -->
+    <script>
+        // Toggle Mobile Menu
+        const burger = document.querySelector('.burger');
+        const navLinks = document.querySelector('.nav-links');
+
+        burger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Back to Top Button
+        const backToTopButton = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            backToTopButton.style.display = window.scrollY > 300 ? 'block' : 'none';
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Highlight Active Section in Navigation
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('nav ul li a');
+            let currentSection = '';
+            sections.forEach((section) => {
+                const sectionTop = section.offsetTop - 80;
+                if (window.scrollY >= sectionTop) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+            navLinks.forEach((link) => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(currentSection)) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

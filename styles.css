@@ -1,0 +1,124 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #007BFF;
+    color: #fff;
+    z-index: 1000;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+header .logo {
+    font-size: 1.5rem;
+}
+
+header .nav-links {
+    display: flex;
+    list-style: none;
+}
+
+header .nav-links li {
+    margin-left: 2rem;
+}
+
+header .nav-links a {
+    text-decoration: none;
+    color: #fff;
+}
+
+header .burger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+header .burger div {
+    background: #fff;
+    height: 3px;
+    margin: 5px;
+    width: 25px;
+}
+
+/* Sections */
+section {
+    padding: 5rem 2rem;
+}
+
+section h2 {
+    text-align: center;
+    color: #007BFF;
+    margin-bottom: 2rem;
+}
+
+/* Timeline */
+.timeline {
+    border-left: 4px solid #007BFF;
+    padding-left: 1rem;
+}
+
+.timeline-item {
+    margin-bottom: 2rem;
+}
+
+.timeline-item h3 {
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+/* Back to Top Button */
+#backToTop {
+    display: none;
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header .nav-links {
+        display: none;
+    }
+
+    header .burger {
+        display: flex;
+    }
+
+    header .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: #007BFF;
+        width: 100%;
+    }
+
+    .timeline-item ul {
+        padding-left: 1.5rem;
+    }
+}
